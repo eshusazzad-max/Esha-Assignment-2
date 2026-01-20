@@ -20,7 +20,9 @@ body {
 
 /* NAVBAR */
 .navbar {
+    width: 100%;
     padding: 20px 0;
+    border: 1px solid rgb(145, 2, 180);
 }
 
 .nav-content {
@@ -30,7 +32,7 @@ body {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
 }
 
@@ -51,7 +53,8 @@ body {
 
 /* BUTTONS */
 .btn-primary {
-    padding: 10px 22px;
+   font-size: 16px;
+    padding: 12px 22px;
     border-radius: 25px;
     background: linear-gradient(135deg,#ff3cac,#784ba0,#2b86c5);
     color: #fff;
@@ -64,37 +67,48 @@ body {
 
 .btn-secondary {
     max-width: 201px;
-    padding: 12px 20px;
+    padding: 12px 22px;
     border-radius: 30px;
     color: #FFFFFF;
-    font-weight: 700px;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
     background: linear-gradient(135deg,#f5f82f,#f353f8,rgb(75, 6, 82));
     border:none;
-    cursor: pointer
+    cursor: pointer;
+    box-shadow: 0 2px 20px rgba(141, 2, 168, 0.842);
+    margin-right: 12px;
+
 }
 .btn-secondary:hover{
     transform:scale(1.1) translateY(-1px);
 }
 
 .btn-outline {
+  font-size: 16px;
     padding: 12px 26px;
     border-radius: 30px;
     background: transparent;
     border: 1px solid #00FF88;
     color:#00FF88;
     cursor: pointer;
+    box-shadow: 0 2px 20px rgba(2, 129, 2, 0.842);
 }
 .btn-outline:hover{
      transform:scale(1.1) translateY(-1px);
   
 }
+.hero-buttons img{
+  max-width: 17px;
+
+}
 
 /* HERO */
 .hero {
+    width: 100%;
     background: url("../assets/hero-bg.png") center/cover no-repeat;
     padding: 120px 20px;
     text-align: center;
+    border: 1px dotted rgb(170, 16, 241);
 }
 
 .hero-content h1{
@@ -148,9 +162,11 @@ body {
 
 /* ABOUT SECTION */
 .about {
+  width: 100%;
   padding: 80px 20px;
   background-color: #0f0f0f;
   color: #ffffff;
+  border: 1px dotted rgb(146, 9, 146);
 }
 
 .about-container {
@@ -201,11 +217,11 @@ body {
   color: #dddddd;
 }
 
-
-/* FEATURES */
+/* -----------Features-------- */
 .features {
   padding: 80px 20px;
   text-align: center;
+  width: 100%;
 }
 
 .features h2 {
@@ -217,16 +233,26 @@ body {
 .feature-grid {
   max-width: 1200px;
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "a b"
+    "a c"
+    "d e";
   gap: 24px;
 }
+
+/* Card position */
+.feature-card:nth-child(1) { grid-area: a; min-height: 260px; }
+.feature-card:nth-child(2) { grid-area: b; min-height: 120px; }
+.feature-card:nth-child(3) { grid-area: c; min-height: 120px; }
+.feature-card:nth-child(4) { grid-area: d; min-height: 150px; }
+.feature-card:nth-child(5) { grid-area: e; min-height: 100px; }
 
 /* CARD */
 .feature-card {
   background: rgba(255, 255, 255, 0.06);
-  padding: 30px 20px;
+  padding: 28px 26px;
   border-radius: 18px;
   transition: 0.3s ease;
 }
@@ -237,49 +263,134 @@ body {
 }
 
 .feature-card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 16px;
 }
 
 .feature-card p {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 24px;
   color: #cccccc;
 }
 
 
-/* EPISODES */
 
-.episodes{
-    max-width: 1200px;
-    margin: 0 auto;
+/* -------Episodes------- */
+.episodes {
+  padding: 80px 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  
 }
+
+.episodes h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
 .episode-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
-.episode-card img {
-    width: 100%;
-    border-radius: 10px;
+.episode-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(120, 7, 134, 0.842);
+}
+.episode-card :hover{
+    transform: translateY(-5px);
+    
+
+}
+
+/* Responsive video wrapper */
+.episode-card iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.episode-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.episode-card p{
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+
+.episode-card span {
+  font-size: 14px;
+  color: #00ff88;
 }
 
 /* HOST */
+.host h2{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    padding: 120px 200px 40px;
+
+}
 .host-box {
     display: flex;
     align-items: center;
     gap: 30px;
-    max-width: 800px;
-    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+    border-radius:15px ;
+    background-color: rgb(31, 13, 54);;
+    padding: 48px 40px;
+    box-shadow: 0 6px 18px rgba(134, 48, 233, 0.842);
+    transition: 0.3s ease;
 }
+.host-box img:hover{
+     transform: translateY(-5px) scale(1.1);
+}
+
+.host-text h3{
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+.host-text p{
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff86;
+    margin-bottom: 20px;
+}
+
+.host-link a{
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 2px solid rgba(184, 15, 184, 0.308);
+    padding :10px;
+    box-shadow: 0 1px 5px rgba(191, 54, 255, 0.842);
+    
+}
+
+
+
 
 /* FOOTER */
 .footer {
+  width: 100%;
   margin-top:120px ;
   background: #07020d;
   padding: 120px;
   justify-items: center;
   text-align: center;
+  border: 1px dotted rgb(160, 18, 153);
   background-image:url(../assets/footer-bg.png);
 }
 
@@ -335,37 +446,4 @@ body {
   margin-top: 32px;
 }
 
-
-/* RESPONSIVE */
-@media (max-width: 576px) {
-    .nav-menu,
-    .btn-primary {
-        display: none;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .stats,
-    .feature-grid,
-    .episode-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .host-box {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-@media (max-width: 576px) {
-  .hero-circle {
-    width: 220px;
-    height: 220px;
-  }
-
-  .mic-img {
-    width: 90px;
-  }
-}
 
